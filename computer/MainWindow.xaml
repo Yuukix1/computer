@@ -5,9 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:computer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <ListBox x:Name="listbox1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        Title="ComputerShop" Height="600" Width="1000">
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="299*"/>
+            <ColumnDefinition Width="716*"/>
+        </Grid.ColumnDefinitions>
+        <Menu Height="16" Width="188" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="98,86,0,0" Grid.Column="1">
+            <MenuItem Header="Számítógépek" Click="computer_click" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Height="18">
+                <MenuItem.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="DarkRed" Offset="1"/>
+                    </LinearGradientBrush>
+                </MenuItem.Background>
+            </MenuItem>
+            <MenuItem Header="Oprendszerek" Click="oprendszer_click" HorizontalAlignment="Center" VerticalAlignment="Center" Width="93" Foreground="#FFF7F7F7" Height="18">
+                <MenuItem.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="DarkRed" Offset="1"/>
+                    </LinearGradientBrush>
+                </MenuItem.Background>
+            </MenuItem>
+        </Menu>
+        <DataGrid Name="data" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="102,163,76,212" BorderBrush="Black" Foreground="BlueViolet" Grid.ColumnSpan="2">
+            <DataGrid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFE2E2E2" Offset="1"/>
+                </LinearGradientBrush>
+            </DataGrid.Background>
+        </DataGrid>
 
     </Grid>
 </Window>

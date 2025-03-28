@@ -1,5 +1,4 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,35 +12,29 @@ using System.Windows.Shapes;
 
 namespace computer
 {
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-            adatbetoltes();
         }
-        private void adatbetoltes()
+        private void computer_click(object sender, RoutedEventArgs e)
         {
-            listbox1.Items.Clear();
-
-            var osData = Connect.GetData("SELECT * FROM OSystem");
-
-            listbox1.Items.Add("Operating Systems");
-
-            foreach (DataRow row in osData.Rows)
-            {
-                listbox1.Items.Add($"{row["Id"]} - {row["Name"]}");
-            }
-
-            var compData = Connect.GetData("SELECT * FROM Comp");
-
-            listbox1.Items.Add("Computers");
-
-            foreach (DataRow row in compData.Rows)
-            {
-                listbox1.Items.Add($"{row["Id"]} - {row["Brand"]} - {row["Type"]} - {row["Display"]} inch - {row["Memory"]} GB - {row["CreatedTime"]}");
-            }
+            string query = "SELECT Id, Brand, Type, Display, Memory, CreatedTime FROM Comp";
+            DataTable table = Connect.GetData(query);
+            data.ItemsSource = table.DefaultView;
         }
+
+        private void oprendszer_click(object sender, RoutedEventArgs e)
+        {
+            string query = "SELECT Name FROM OSystem";
+            DataTable table = Connect.GetData(query);
+            data.ItemsSource = table.DefaultView;
+        }
+
 
 
     }

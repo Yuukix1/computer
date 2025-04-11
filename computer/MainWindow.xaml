@@ -8,24 +8,18 @@
         Title="ComputerShop" Height="600" Width="1000">
 
     <Grid Background="#FFE0E0E0">
-        <!-- Világos szürke háttér -->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <!-- Bejelentkezés -->
             <RowDefinition Height="*"/>
-            <!-- Tartalom -->
         </Grid.RowDefinitions>
 
-        <!-- Bejelentkezés -->
+        <!-- Bejelentkezés + Regisztráció -->
         <StackPanel x:Name="loginPanel" Orientation="Horizontal" Margin="10" Grid.Row="0">
             <Label Content="Bejelentkezés:" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="#4A4A4A"/>
-            <!-- Sötétebb szürke -->
             <TextBox x:Name="username_txt" Width="120" Margin="0,0,10,0" Background="#FFFFFF" BorderBrush="#4A4A4A"/>
-            <!-- Fehér háttér, szürke keret -->
             <PasswordBox x:Name="passwordBox" Width="120" Margin="0,0,10,0" Background="#FFFFFF" BorderBrush="#4A4A4A"/>
-            <!-- Fehér háttér, szürke keret -->
-            <Button Content="Bejelentkezés" Width="100" Background="#FF2196F3" Foreground="White" Click="Login_Click"/>
-            <!-- Kék háttér, fehér szöveg -->
+            <Button Content="Bejelentkezés" Width="100" Background="#FF2196F3" Foreground="White" Click="Login_Click" Margin="0,0,10,0"/>
+            <Button Content="Regisztráció" Width="100" Background="#FF4CAF50" Foreground="White" Click="Register_Click"/>
         </StackPanel>
 
         <!-- Tartalom -->
@@ -41,9 +35,7 @@
                     <MenuItem.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FF00BCD4"/>
-                            <!-- Világoskék -->
                             <GradientStop Color="#FF6200EE" Offset="1"/>
-                            <!-- Sötétlila -->
                         </LinearGradientBrush>
                     </MenuItem.Background>
                 </MenuItem>
@@ -51,9 +43,7 @@
                     <MenuItem.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FF00BCD4"/>
-                            <!-- Világoskék -->
                             <GradientStop Color="#FF6200EE" Offset="1"/>
-                            <!-- Sötétlila -->
                         </LinearGradientBrush>
                     </MenuItem.Background>
                 </MenuItem>
@@ -64,16 +54,14 @@
                 <DataGrid.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF00BCD4"/>
-                        <!-- Világoskék -->
                         <GradientStop Color="#FF6200EE" Offset="1"/>
-                        <!-- Sötétlila -->
                     </LinearGradientBrush>
                 </DataGrid.Background>
             </DataGrid>
 
             <!-- Kilépés gomb -->
             <Button Content="Kilépés" Width="100" Height="30" Margin="0,0,20,20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Grid.Column="1" Background="#FF2196F3" Foreground="White" Click="kilepes_Click"/>
-            <!-- Kék háttér, fehér szöveg -->
         </Grid>
     </Grid>
 </Window>
+
